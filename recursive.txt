@@ -1,0 +1,15 @@
+FUNCTION palindrome(s: STRING): BOOLEAN
+    var
+        n: INTEGER;
+        i: INTEGER;
+    BEGIN
+        n := LENGTH(s);
+        i := 1;
+        IF (n <= 1) THEN
+            palindrome := true;
+        ELSE IF (s[i] = s[n]) THEN
+            palindrome := palindrome(SUBSTR(s, i+1, n-2));
+        ELSE
+            palindrome := false;
+        END_IF;
+    END;
